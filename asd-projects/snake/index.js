@@ -92,14 +92,11 @@ function update() {
 
   if (activeKey === KEY.LEFT) {
     snake.head.direction = "left";
-  }
-if(activeKey === KEY.RIGHT) {
+  } else if(activeKey === KEY.RIGHT) {
   snake.head.direction = "right" ; 
-}
-if (activeKey === KEY.UP) {
+} else if (activeKey === KEY.UP) {
     snake.head.direction = "up";
-  }
-  if (activeKey === KEY.DOWN) {
+  } else if (activeKey === KEY.DOWN) {
   snake.head.direction = "down";
   }
   // FILL IN THE REST
@@ -130,11 +127,9 @@ snake.head.column = snake.head.column - 1;
 }
 else if (snake.head.direction === "right") {
     snake.head.column = snake.head.column + 1;
-  }
-if (snake.head.direction === "up") {
+  } else if (snake.head.direction === "up") {
     snake.head.row = snake.head.row - 1;
-  }
- else if (snake.head.direction === "down") {
+  } else if (snake.head.direction === "down") {
     snake.head.row = snake.head.row + 1;
   }
 }
@@ -280,7 +275,7 @@ function handleKeyDown(event) {
     event.which === KEY.LEFT ||
     event.which === KEY.RIGHT ||
     event.which === KEY.UP ||
-    event.which === KEY.DOWN
+    event.which === KEY.DOWN 
   ) {
     started = true; // the game starts when the first key is pressed
   }
