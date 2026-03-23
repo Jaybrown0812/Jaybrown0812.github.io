@@ -145,7 +145,7 @@ for ( var i = snake.body.length -1; i > 0; i --/* start, stop, and update statem
 // TODO 9: Create a new helper function
 function moveBodyAToBodyB(bodyA, bodyB) {
   bodyA.row = bodyB.row;
-  bodyA.colum = bodyB.colum;
+  bodyA.column = bodyB.column;
   bodyA.direction = bodyB.direction;
 }
 // console.log("Moving body A to body B...");
