@@ -161,7 +161,8 @@ function hasHitWall() {
   if (snake.head.row < 0 || snake.head.row >= ROWS) {
     return true;
   } else if (snake.head.column < 0 || snake.head.column >= COLUMNS) {
-  } return true;{
+    return true;
+  } else {
   /* 
   
   TODO 11: Should return true if the snake's head has collided with the four walls of the
@@ -169,8 +170,8 @@ function hasHitWall() {
     
     HINT: What will the row and column of the snake's head be if this were the case?
   */
+    return false;
   }
-  return false;
 }
 
 function hasCollidedWithApple() {
