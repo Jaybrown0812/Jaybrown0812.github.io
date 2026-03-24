@@ -112,14 +112,18 @@ function moveSnake() {
     stored in the Array snake.body and each part knows its current 
     column/row properties. 
   */
-for ( var i = snake.body.length -1; i > 0; i --/* start, stop, and update statements to loop backwards through the indexes of snake.body */ ) {
+  for (
+    var i = snake.body.length - 1;
+    i > 0;
+    i-- /* start, stop, and update statements to loop backwards through the indexes of snake.body */
+  ) {
     var currentSnakeSquare = snake.body[i];
-    var snakeSquareInFront = snake.body[i - i];
+    var snakeSquareInFront = snake.body[i - 1];
 
     moveBodyAToBodyB(currentSnakeSquare, snakeSquareInFront);
 
     repositionSquare(currentSnakeSquare);
-}
+  }
 
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
@@ -154,6 +158,10 @@ function moveBodyAToBodyB(bodyA, bodyB) {
 //   repositionSquare(snake.body[1]);
 // }, 2_000);
 function hasHitWall() {
+  if (snake.head.row < 0 || snake.head.row >= ROWS) {
+    return true;
+  } else if (snake.head.column < 0 || snake.head.column >= COLUMNS) {
+  } return true;{
   /* 
   
   TODO 11: Should return true if the snake's head has collided with the four walls of the
@@ -161,7 +169,7 @@ function hasHitWall() {
     
     HINT: What will the row and column of the snake's head be if this were the case?
   */
-
+  }
   return false;
 }
 
