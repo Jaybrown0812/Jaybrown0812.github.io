@@ -163,7 +163,7 @@ function hasHitWall() {
   } else if (snake.head.column < 0 || snake.head.column >= COLUMNS) {
     return true;
   } else {
-  /* 
+    /* 
   
   TODO 11: Should return true if the snake's head has collided with the four walls of the
     board, false otherwise.
@@ -181,8 +181,11 @@ function hasCollidedWithApple() {
     
     HINT: Both the apple and the snake's head are aware of their own row and column
   */
-
-  return false;
+  if (snake.head.row === apple.row && snake.head.column === apple.column) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function handleAppleCollision() {
@@ -201,17 +204,22 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
-  /* 
-    TODO 13: Should return true if the snake's head has collided with any part of the
-    snake's body.
-    
-    HINT: Each part of the snake's body is stored in the snake.body Array. The
-    head and each part of the snake's body also knows its own row and column.
-  */
-
-  return false;
+  for(var i = 1; i < snake.length; i++){
+    var currentSquare = snake.body[i];
+    if(currentSquare.row === snake.head.row && currentSquare.column === snake.head.column){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }
-
+/* 
+  TODO 13: Should return true if the snake's head has collided with any part of the
+  snake's body.
+  
+  HINT: Each part of the snake's body is stored in the snake.body Array. The
+  head and each part of the snake's body also knows its own row and column.
+*/
 function endGame() {
   // stop update function from running
   clearInterval(updateInterval);
